@@ -88,12 +88,12 @@ app.post("/sign-in", async (req, res) => {
 app.get("/users",async (req,res)=>{
     const nomeHeader = req.headers.user;
     const users = await db.collection("users").find({}).toArray();
-    
+
     if(users){
         res.send(users);
     }else{
         res.sendStatus(400);
-    }
+    }   
 
 })
 
